@@ -5,7 +5,7 @@ spring boot 3.2.3 버전 프로젝트에서 spring security와 oauth를 이용�
 - Spring security 6.1.x
 - MySQL 8.3.0
 
-## GCP에서 구글 로그인 설정
+## ✅ GCP에서 구글 로그인 설정
 
 ### 새 프로젝트
 
@@ -19,11 +19,10 @@ spring boot 3.2.3 버전 프로젝트에서 spring security와 oauth를 이용�
 3. `OAuth 클라이언트 ID 만들기`로 이동해서 애플리케이션 유형을 `웹 애플리케이션`으로 설정한다.
 4. 승인된 리디렉션 URL 주소를 등록한다. 인증에 성공한 경우 구글에서 리다이렉트할 URL이다.
     - spring boot 3 버전에서, spring security가 `{domain}/login/oauth2/code/google`로 리다이렉트 URL을 지원하기 때문에, 별도로 URL을 지원하는 컨트롤러를 만들지 않아도 된다.
-    - 소셜 로그인을 하지 않는다면 [이곳](https://velog.io/@99mon/Spring-%EC%8A%A4%ED%94%84%EB%A7%81-%EC%8B%9C%ED%81%90%EB%A6%AC%ED%8B%B0-%EA%B5%AC%EA%B8%80-%EB%A1%9C%EA%B7%B8%EC%9D%B8)을 참고한다.
     - 현재 로컬에서 개발 중이기 때문에 `http://localhost:8080/login/oauth2/code/google`만 등록하는데, 서버에 배포하면 주소를 추가해야 한다. 
 5. 생성 버튼을 누르면 클라이언트 ID, 클라이언트 보안 비밀번호를 알 수 있다. 노출되지 않게 복사해서 저장해둔다.
 
-## Spring boot 프로젝트
+## ✅ Spring boot 프로젝트
 
 ### build.gradle 설정
 
@@ -123,7 +122,14 @@ application-oauth.yml에는 클라이언트 ID와 클라이언트 보안 비밀�
 
 실수로 업로드 했다면 cache까지 삭제해 올라간 파일을 확실하게 삭제하도록 한다.
 
-## 참고자료
+## ✅ 결과 화면
+
+`localhost:8080`으로 접속 후 `google login`을 누르면 아래 화면을 통해 구글 로그인에 성공한다!
+
+![image](https://github.com/RumosZin/spring-security-oauth/assets/81238093/c7a3f0d6-5152-461d-831a-91b709439597)
+
+
+### 참고자료
 
 - https://docs.spring.io/spring-authorization-server/reference/guides/how-to-social-login.html
 - https://spring.io/guides/tutorials/spring-boot-oauth2
